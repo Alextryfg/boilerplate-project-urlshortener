@@ -19,7 +19,6 @@ app.use(function (req, res, next) {
 //Añadimos linea para permitir a express recibir datos en formato json enviados por formulario
 app.use(express.urlencoded({ extended: false }));
 
-
 app.use(cors());
 
 app.use('/public', express.static(`${process.cwd()}/public`));
