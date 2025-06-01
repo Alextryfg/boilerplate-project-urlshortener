@@ -40,7 +40,7 @@ app.listen(port, function() {
 app.post('/api/shorturl', function (req, res) {
   let original_url = req.body.url;
 
-  // Validar la URL
+  // Validar la URL, el regex esta sacado de https://stackoverflow.com/questions/5717093/check-if-a-string-is-a-valid-url-in-javascript
   const urlPattern = /^(ftp|http|https):\/\/[^ "]+$/;
   if (!urlPattern.test(original_url)) {
     return res.json({ error: 'invalid url' });
